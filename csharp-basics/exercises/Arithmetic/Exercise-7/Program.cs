@@ -13,13 +13,16 @@ namespace Exercise_7
                 if (i % 3 == 0)
                 {
                     Console.Write(" Coza ");
-                } else if (i % 5 == 0)
+                } 
+                else if (i % 5 == 0)
                 {
                     Console.Write(" Loza ");
-                } else if (i % 7 == 0)
+                } 
+                else if (i % 7 == 0)
                 {
                     Console.Write(" Woza ");
-                } else if (i % 3 == 0 && i % 5 == 0)
+                }
+                else if (i % 3 == 0 && i % 5 == 0)
                 {
                     Console.Write(" CozaLoza ");
                 }
