@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Casting
 {
@@ -21,11 +17,11 @@ namespace Casting
             int b = 2;
             int c = 3;
             double d = 4;
-            float e = 5;
+            float e = 5f;
 
             //fixme - should be 15 :|
-            //int sum = a + b + c + d + e;
-            //Console.WriteLine(sum);
+            int sum = Convert.ToInt32(a) + b + c + Convert.ToInt32(d + e);
+            Console.WriteLine(sum);
         }
 
         static void Second()
@@ -37,8 +33,8 @@ namespace Casting
             float e = 5.3f;
 
             //fixme - should be 15.5 :| 
-            //float sum = a + b + c + d + e;
-            //Console.WriteLine(sum);
+            float sum = float.Parse(a) + (float)(b + c + d + e);
+            Console.WriteLine(sum);
         }
     }
 }
