@@ -24,11 +24,13 @@ namespace Exercise_9
             {
                 Console.WriteLine(BMIresult);
                 Console.WriteLine("A sedentary person's weight.");
-            } else if (FormulaBMI < 18.5)
+            }
+            else if (FormulaBMI < 18.5)
             {
                 Console.WriteLine(BMIresult);
                 Console.WriteLine("The person is considered underweight.");
-            } else if (FormulaBMI > 25)
+            } 
+            else if (FormulaBMI > 25)
             {
                 Console.WriteLine(BMIresult);
                 Console.WriteLine("The person is considered overweight.");
