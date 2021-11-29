@@ -31,7 +31,8 @@ namespace Exercise_5
                     if (guess > number)
                     {
                         Console.WriteLine("Sorry, you are too high.");
-                    } else if (guess < number)
+                    } 
+                    else if (guess < number)
                     {
                         Console.WriteLine("Sorry, you are too low.");
                     }
@@ -46,14 +47,7 @@ namespace Exercise_5
                 response = Console.ReadLine();
                 response = response.ToUpper();
 
-                if (response == "Y")
-                {
-                    playAgain = true;
-                }
-                else if (response == "N")
-                {
-                    playAgain = false;
-                }
+                playAgain = response == "Y" ? true : false;
 
             }
 
