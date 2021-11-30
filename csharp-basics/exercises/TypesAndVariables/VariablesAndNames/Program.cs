@@ -6,32 +6,26 @@ namespace VariablesAndNames
     {
         private static void Main(string[] args)
         {
-            int Cars;
-            int Drivers;
-            int Passengers;
-            int CarsNotDriven; 
-            int CarsDriven;
-            double SeatsInACar;
-            int CarpoolCapacity;
-            int AveragePassengersPerCar;
+            int cars;
+            int drivers;
+            int passengers;
+            int carsNotDriven;
+            int carpoolCapacity;
+            int averagePassengersPerCar;
 
-            Cars = 100;
-            SeatsInACar = 4.00;
-            Drivers = 28;
-            Passengers = 90;
-            CarsNotDriven = 72;
-            // free cars
-            CarsDriven = 28; 
-            // cars driven at the moment
-            CarpoolCapacity = 60;
-            AveragePassengersPerCar = 4;
+            cars = 100;
+            drivers = 28;
+            passengers = 90;
+            carsNotDriven = 72;
+            carpoolCapacity = 60;
+            averagePassengersPerCar = 4;
 
-            Console.WriteLine("There are " + Cars + " cars available.");
-            Console.WriteLine("There are only " + Drivers + " drivers available.");
-            Console.WriteLine("There will be " + CarsNotDriven + " empty cars today.");
-            Console.WriteLine("We can transport " + CarpoolCapacity + " people today.");
-            Console.WriteLine("We have " + Passengers + " to carpool today.");
-            Console.WriteLine("We need to put about " + AveragePassengersPerCar + " in each car.");
+            Console.WriteLine("There are " + cars + " cars available.");
+            Console.WriteLine("There are only " + drivers + " drivers available.");
+            Console.WriteLine("There will be " + carsNotDriven + " empty cars today.");
+            Console.WriteLine("We can transport " + carpoolCapacity + " people today.");
+            Console.WriteLine("We have " + passengers + " to carpool today.");
+            Console.WriteLine("We need to put about " + averagePassengersPerCar + " in each car.");
             Console.ReadKey();
         }
     }
