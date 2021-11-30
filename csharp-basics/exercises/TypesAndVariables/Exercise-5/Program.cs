@@ -29,20 +29,18 @@ namespace Exercise_5
                 5, 6, 7, 8
             };
 
-
             for (int i = 0; i < classesName.Length; i++)
             { 
                 Columns = "|" + Coluns[i] + "|"; 
                 text.Append(Columns + (String.Format(String.Format("{0,37} {1,30:N0}\n", classesName[i] + "|", TeachersName[i] + "|"))));
             }
 
-            int sds = Coluns.Length;
-            int nikita = (text.Length / sds) - 3;
-            int grop = nikita;
+            int CountOfColumns = Coluns.Length;
+            int OneLineLenght = (text.Length / CountOfColumns) - 3;
 
-            for (int i = nikita; i != 0; i--)
+            for (int i = OneLineLenght; i != 0; i--)
             {
-                if (i == nikita)
+                if (i == OneLineLenght)
                 {
                     Console.Write("+");
                 }
@@ -58,9 +56,9 @@ namespace Exercise_5
             Console.WriteLine();
             Console.Write(text);
 
-            for (int i = nikita; i != 0; i--)
+            for (int i = OneLineLenght; i != 0; i--)
             {
-                if (i == nikita)
+                if (i == OneLineLenght)
                 {
                     Console.Write("+");
                 }
