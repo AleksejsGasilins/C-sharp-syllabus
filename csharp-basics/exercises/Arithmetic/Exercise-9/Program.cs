@@ -19,13 +19,7 @@ namespace Exercise_9
             double FormulaBMI = weightInFtToKg / (heightInDuimToM * heightInDuimToM);
             double BMIresult = Math.Round(FormulaBMI, 2);
 
-
-            if (FormulaBMI > 18.5 && FormulaBMI < 25)
-            {
-                Console.WriteLine(BMIresult);
-                Console.WriteLine("A sedentary person's weight.");
-            }
-            else if (FormulaBMI < 18.5)
+            if (FormulaBMI < 18.5)
             {
                 Console.WriteLine(BMIresult);
                 Console.WriteLine("The person is considered underweight.");
@@ -34,6 +28,11 @@ namespace Exercise_9
             {
                 Console.WriteLine(BMIresult);
                 Console.WriteLine("The person is considered overweight.");
+            }
+            else
+            {
+                Console.WriteLine(BMIresult);
+                Console.WriteLine("A sedentary person's weight.");
             }
         }
     }
