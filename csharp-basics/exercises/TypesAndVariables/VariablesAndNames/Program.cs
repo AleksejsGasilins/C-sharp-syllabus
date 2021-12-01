@@ -6,24 +6,30 @@ namespace VariablesAndNames
     {
         private static void Main(string[] args)
         {
-            int cars, drivers, passengers, cars_not_driven, cars_driven;
-            double seats_in_a_car, carpool_capacity, average_passengers_per_car;
+            int Cars;
+            int Drivers;
+            int Passengers;
+            int CarsNotDriven;
+            int CarsDriven;
+            double SeatsInACar;
+            double CarpoolCapacity;
+            double AveragePassengersPerCar;
 
-            cars = 100; //cars
-            seats_in_a_car = 4.0; //seats in a car
-            drivers = 28; // drivers
-            passengers = 90; // passengers
-            //cars_not_driven  // free cars
-            //cars_driven ; // cars driven at the moment
-            //carpool_capacity = // carpool capacity
-            //average_passengers_per_car = // average passengers per car
+            Cars = 100; //cars
+            SeatsInACar = 4.0; //seats in a car
+            Drivers = 28; // drivers
+            Passengers = 90; // passengers
+            CarsNotDriven = 72;  // free cars
+            CarsDriven = ; // cars driven at the moment
+            CarpoolCapacity = ;// carpool capacity
+            AveragePassengersPerCar = 4;// average passengers per car
 
-            Console.WriteLine("There are " + cars + " cars available.");
-            Console.WriteLine("There are only " + drivers + " drivers available.");
-            Console.WriteLine("There will be " + cars_not_driven + " empty cars today.");
-            Console.WriteLine("We can transport " + carpool_capacity + " people today.");
-            Console.WriteLine("We have " + passengers + " to carpool today.");
-            Console.WriteLine("We need to put about " + average_passengers_per_car + " in each car.");
+            Console.WriteLine("There are " + Cars + " cars available.");
+            Console.WriteLine("There are only " + Drivers + " drivers available.");
+            Console.WriteLine("There will be " + CarsNotDriven + " empty cars today.");
+            Console.WriteLine("We can transport " + CarpoolCapacity + " people today.");
+            Console.WriteLine("We have " + Passengers + " to carpool today.");
+            Console.WriteLine("We need to put about " + AveragePassengersPerCar + " in each car.");
             Console.ReadKey();
         }
     }
