@@ -39,9 +39,6 @@ namespace Exercise_6
                 Console.WriteLine("Not suitable symbol");
                 Console.ReadKey();
             }
-
-
-
         }
     }
 }

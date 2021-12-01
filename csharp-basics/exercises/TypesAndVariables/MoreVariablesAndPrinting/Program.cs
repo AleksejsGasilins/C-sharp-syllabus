@@ -23,6 +23,7 @@ namespace MoreVariablesAndPrinting
             Eyes = "Blue";
             Teeth = "White";
             Hair = "Brown";
+
             HeightInCm = Math.Round((Height * 2.54m), 2);
             WeightInKg = Math.Round((Weight * 0.453592m), 2);
 
@@ -32,10 +33,8 @@ namespace MoreVariablesAndPrinting
             Console.WriteLine("Actually, that's not too heavy.");
             Console.WriteLine("He's got " + Eyes + " eyes and " + Hair + " hair.");
             Console.WriteLine("His teeth are usually " + Teeth + " depending on the coffee.");
-
             Console.WriteLine("If I add " + Age + ", " + HeightInCm + ", and " + WeightInKg
-                               + " I get " + (Age + HeightInCm + WeightInKg) + ".");
-
+                              + " I get " + (Age + HeightInCm + WeightInKg) + ".");
             Console.ReadKey();
         }
     }

@@ -9,7 +9,6 @@ namespace SadFor
             Test1(10, 2.5);
             Test1(20, 4);
             Test1(15, 3);
-
         }
 
         public static void Test1(double numberOne, double numberTwo)
