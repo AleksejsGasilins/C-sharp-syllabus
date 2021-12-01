@@ -39,6 +39,7 @@ namespace Exercise_5
 
                     guesses++;
                 }
+
                 Console.WriteLine("Number: " + number);
                 Console.WriteLine("You guessed it!  What are the odds?!?");
                 Console.WriteLine("Guesses: " + guesses);
@@ -48,11 +49,9 @@ namespace Exercise_5
                 response = response.ToUpper();
 
                 playAgain = response == "Y" ? true : false;
-
             }
 
             Console.WriteLine("Thanks for playing!");
-
             Console.ReadKey();
         }
     }
