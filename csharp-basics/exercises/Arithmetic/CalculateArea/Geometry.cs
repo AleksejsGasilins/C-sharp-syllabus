@@ -18,8 +18,7 @@ namespace CalculateArea
             else
             {
                 double pi = Math.PI;
-                double area = Math.Round((newRadius * pi * 2), 2);
-                return area;
+                return Math.Round((newRadius * pi * 2), 2);
             }
         }
 
@@ -33,10 +32,8 @@ namespace CalculateArea
             }
             else
             {
-                double area = Math.Round((newLenght * newWidth), 2);
-                return area;
+                return Math.Round((newLenght * newWidth), 2);
             }
-            throw new NotImplementedException();
         }
 
         public static double AreaOfTriangle(decimal ground, decimal h)
@@ -52,7 +49,6 @@ namespace CalculateArea
             {
                 return Math.Round((newGround * newH * 0.5), 2);
             }
-            throw new NotImplementedException();
         }
     }
 }
