@@ -21,7 +21,6 @@ namespace LargestNumber
             list.Add(input1);
             list.Add(input2);
             list.Add(input3);
-            list.Sort();
 
             foreach (string allNumbers in list)
             {
