@@ -42,31 +42,31 @@ namespace Exercise_8
             Console.ReadKey();
         }
 
-        public static decimal MinutesInHours(string HoursYearAndDays)
+        public static decimal MinutesInHours(string hoursYearAndDays)
         {
-            decimal x = Decimal.Parse(HoursYearAndDays);
+            decimal x = Decimal.Parse(hoursYearAndDays);
 
-            decimal MinutesInHours = x * 0.01666668m;
+            decimal minutesInHours = x * 0.01666668m;
 
-            return MinutesInHours;
+            return minutesInHours;
         }
 
-        public static decimal HoursInDays(string HoursYearAndDays)
+        public static decimal HoursInDays(string hoursYearAndDays)
         {
-            decimal y = Decimal.Parse(HoursYearAndDays);
+            decimal y = Decimal.Parse(hoursYearAndDays);
 
-            decimal HoursInDays = y * 0.000694445m;
+            decimal hoursInDays = y * 0.000694445m;
 
-            return HoursInDays;
+            return hoursInDays;
         }
 
-        public static decimal DaysInYears(string HoursYearAndDays)
+        public static decimal DaysInYears(string hoursYearAndDays)
         {
-            decimal j = Decimal.Parse(HoursYearAndDays);
+            decimal j = Decimal.Parse(hoursYearAndDays);
 
-            decimal DaysInYears = j * 1.9025890411e-6m;
+            decimal daysInYears = j * 1.9025890411e-6m;
 
-            return DaysInYears;
+            return daysInYears;
         }
     }
 }
