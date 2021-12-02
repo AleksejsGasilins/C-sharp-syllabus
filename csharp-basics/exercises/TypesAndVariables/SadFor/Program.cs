@@ -6,21 +6,24 @@ namespace SadFor
     {
         private static void Main(string[] args)
         {
-            Test1();
+            Test1(10, 2.5);
+            Test1(20, 4);
+            Test1(15, 3);
         }
 
-        private static void Test1()
+        public static void Test1(double numberOne, double numberTwo)
         {
-            //fixme so I would compile
-            /*
-            for (i = 0; i < 10; i++)
+            double x = Convert.ToDouble(numberOne);
+            double y = Convert.ToDouble(numberTwo);
+
+            for (int i = 0; i < x; i++)
             {
-                if (Math.Sqrt(i) > 2.5)
+                if (Math.Sqrt(i) > y)
                 {
                     Console.WriteLine(i);
+                    Console.ReadKey();
                 }
             }
-            */
         }
     }
 }
