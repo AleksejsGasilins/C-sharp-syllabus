@@ -6,11 +6,11 @@ namespace Exercise_4
     {
         static void Main(string[] args)
         {
-            string MyName = "Juan";
-            string MyLastName = "Valdez";
-            int MyBornData = 1995;
+            string myName = "Juan";
+            string myLastName = "Valdez";
+            int myBornData = 1995;
 
-            Console.WriteLine("My name is " + MyName + " " + MyLastName + " and I was born in " + MyBornData + ".");
+            Console.WriteLine("My name is " + myName + " " + myLastName + " and I was born in " + myBornData + ".");
             Console.ReadKey();
         }
     }
