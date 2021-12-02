@@ -22,7 +22,6 @@ namespace Exercise_5
 
             var text = new System.Text.StringBuilder();
             string Columns = "";
-            string Minus = "-";
             int[] Coluns =
             {
                 1, 2, 3, 4,
@@ -38,24 +37,14 @@ namespace Exercise_5
             int CountOfColumns = Coluns.Length;
             int OneLineLenght = (text.Length / CountOfColumns) - 3;
 
-            for (int i = OneLineLenght; i != 0; i--)
-            {
-                if (i == OneLineLenght)
-                {
-                    Console.Write("+");
-                }
-
-                Console.Write(Minus);
-
-                if (i == 1)
-                {
-                    Console.Write("+");
-                }
-            }
-
+            linePlus(OneLineLenght);
             Console.WriteLine();
             Console.Write(text);
+            linePlus(OneLineLenght);
+        }
 
+        private static void linePlus(int OneLineLenght)
+        {
             for (int i = OneLineLenght; i != 0; i--)
             {
                 if (i == OneLineLenght)
@@ -63,7 +52,7 @@ namespace Exercise_5
                     Console.Write("+");
                 }
 
-                Console.Write(Minus);
+                Console.Write("-");
 
                 if (i == 1)
                 {
