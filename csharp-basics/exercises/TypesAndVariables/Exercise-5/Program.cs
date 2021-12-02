@@ -31,7 +31,7 @@ namespace Exercise_5
             for (int i = 0; i < classesName.Length; i++)
             { 
                 Columns = "|" + Coluns[i] + "|"; 
-                text.Append(Columns + (String.Format(String.Format("{0,37} {1,30:N0}\n", classesName[i] + "|", TeachersName[i] + "|"))));
+                text.Append(Columns + (String.Format("{0,37} {1,30:N0}\n", classesName[i] + "|", TeachersName[i] + "|")));
             }
 
             int CountOfColumns = Coluns.Length;
