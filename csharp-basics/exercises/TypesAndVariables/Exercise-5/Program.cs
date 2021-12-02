@@ -37,13 +37,13 @@ namespace Exercise_5
             int CountOfColumns = Coluns.Length;
             int OneLineLenght = (text.Length / CountOfColumns) - 3;
 
-            linePlus(OneLineLenght);
+            LinePlus(OneLineLenght);
             Console.WriteLine();
             Console.Write(text);
-            linePlus(OneLineLenght);
+            LinePlus(OneLineLenght);
         }
 
-        private static void linePlus(int OneLineLenght)
+        private static void LinePlus(int OneLineLenght)
         {
             for (int i = OneLineLenght; i != 0; i--)
             {
