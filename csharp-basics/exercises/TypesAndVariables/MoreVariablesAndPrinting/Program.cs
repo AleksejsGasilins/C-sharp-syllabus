@@ -18,8 +18,10 @@ namespace MoreVariablesAndPrinting
 
             Name = "Zed A. Shaw";
             Age = 35;
-            Height = 74;  // inches
-            Weight = 180; // lbs
+            Height = 74;  
+            // inches
+            Weight = 180; 
+            // lbs
             Eyes = "Blue";
             Teeth = "White";
             Hair = "Brown";
