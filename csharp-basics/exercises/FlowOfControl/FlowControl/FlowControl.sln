@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargestNumber", "LargestNum
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenBillion", "TenBillion\TenBillion.csproj", "{77AB50C0-F0DA-46B0-8299-7AB0B9404B03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintDayInWord", "PrintDayInWord\PrintDayInWord.csproj", "{235EFC69-217B-48AB-87A4-1DDDE33F5772}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintDayInWord", "PrintDayInWord\PrintDayInWord.csproj", "{235EFC69-217B-48AB-87A4-1DDDE33F5772}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise-5", "Exercise-5\Exercise-5.csproj", "{ED8D9116-33D6-4ACE-8693-20842D21664F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneKeyPad", "Exercise-5\PhoneKeyPad.csproj", "{ED8D9116-33D6-4ACE-8693-20842D21664F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
