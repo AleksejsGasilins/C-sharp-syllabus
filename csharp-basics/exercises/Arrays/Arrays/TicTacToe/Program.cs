@@ -1,70 +1,138 @@
 ﻿using System;
+using System.Threading;
 
 namespace TicTacToe
 {
     class Program
     {
-        private static char[,] board = new char[3, 3];
-
-        private static void Main(string[] args)
+        static char[,] Board =
         {
-            InitBoard();
-            DisplayBoard();
-        }
+            {'1', '2', '3'},
+            {'4', '5', '6'},
+            {'7', '8', '9'},
+        };
+        static int player = 1;
+        static int choiceR;
+        static int choiceC;
 
-        private static char InitBoard()
+        static int flag = 0;
+
+        static void Main(string[] args)
         {
-            for (int i = 0; i <= 9; i++)
+            do
             {
-                var userR = Console.ReadLine();
-                var userC = Console.ReadLine();
+                Console.WriteLine("\nPlayer1:X and Player2:O");
 
-                string userRToInt = userR;
-                string userCToInt = userC;
+                if (player % 2 == 0)
+                {
+                    Console.WriteLine("Player 2 Chance");
+                }
+                else
+                {
+                    Console.WriteLine("Player 1 Chance");
+                }
 
-                int X = Convert.ToInt32(userRToInt);
-                int Y = Convert.ToInt32(userCToInt);
-                return board[X, Y] = '0';
+                Console.WriteLine("\n");
+                DisplayBoard();
+                Console.WriteLine("Enter Row number: ");
+                choiceR = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter Column number: ");
+                choiceC = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("  0  " + board[0, 0] + "|" + board[0, 1] + "|" + board[0, 2]);
-                Console.WriteLine("    --+-+--");
-                Console.WriteLine("  1  " + board[1, 0] + "|" + board[1, 1] + "|" + board[1, 2]);
-                Console.WriteLine("    --+-+--");
-                Console.WriteLine("  2  " + board[2, 0] + "|" + board[2, 1] + "|" + board[2, 2]);
-                Console.WriteLine("    --+-+--");
-                Console.ReadKey();
+                if (Board[choiceR, choiceC] != 'X' && Board[choiceR, choiceC] != 'O')
+                {
+                    if (player % 2 == 0)
+                    {
+                        Board[choiceR, choiceC] = 'O';
+                        player++;
+                    }
+                    else
+                    {
+                        Board[choiceR, choiceC] = 'X';
+                        player++;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Sorry the row { 0} is already marked with { 1 }", choiceR, choiceC,
+                        Board[choiceR, choiceC]);
+                    Console.WriteLine("\n");
+                    Console.WriteLine("Please wait 2 second board is loading again.....");
+                    Thread.Sleep(2000);
+                } 
+                flag = CheckWin();
+            } while (flag != 1 && flag != -1);
+
+            if (flag == 1)
+            {
+                Console.WriteLine("Player {0} has won", (player % 2) + 1);
             }
-            // fills up the board with blanks
-            //for (var r = 0; r < 3; r++)
-            //{
-            //    for (var c = 0; c < 3; c++)
-            //        board[r, c] = ' ';
-            //}
+            else
+            {
+                Console.WriteLine("Draw");
+            }
 
+            Console.ReadLine();
         }
 
         private static void DisplayBoard()
         {
-            Console.WriteLine("  0  " + board[0, 0] + "|" + board[0, 1] + "|" + board[0, 2]);
-            Console.WriteLine("    --+-+--");
-            Console.WriteLine("  1  " + board[1, 0] + "|" + board[1, 1] + "|" + board[1, 2]);
-            Console.WriteLine("    --+-+--");
-            Console.WriteLine("  2  " + board[2, 0] + "|" + board[2, 1] + "|" + board[2, 2]);
-            Console.WriteLine("    --+-+--");
-            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("     |     |      ");
+            Console.WriteLine("  {0}  |  {1}  |  {2}", Board[0, 0], Board[0, 1], Board[0, 2]);
+            Console.WriteLine("_____|_____|_____ ");
+            Console.WriteLine("     |     |      ");
+            Console.WriteLine("  {0}  |  {1}  |  {2}", Board[1, 0], Board[1, 1], Board[1, 2]);
+            Console.WriteLine("_____|_____|_____ ");
+            Console.WriteLine("     |     |      ");
+            Console.WriteLine("  {0}  |  {1}  |  {2}", Board[2, 0], Board[2, 1], Board[2, 2]);
+            Console.WriteLine("     |     |      ");
         }
 
-        private static int Userdats(ConsoleKeyInfo UserInput)
+        private static int CheckWin()
         {
-            int Bowl;
-
-            if (char.IsDigit(UserInput.KeyChar))
+            if (Board[0, 0] == Board[0, 1] && Board[0, 1] == Board[0,2])
             {
-                Bowl = int.Parse(UserInput.KeyChar.ToString()); // use Parse if it's a Digit
+                return 1;
+            }
+            else if (Board[1, 0] == Board[1, 1] && Board[1, 1] == Board[1, 2])
+            {
+                return 1;
+            }
+            else if (Board[2, 0] == Board[2, 1] && Board[2, 1] == Board[2, 2])
+            {
+                return 1;
+            }
+            else if (Board[0, 0] == Board[1, 0] && Board[1, 0] == Board[2, 0])
+
+            {
+                return 1;
+            }
+            else if (Board[0, 1] == Board[1, 1] && Board[1, 1] == Board[2, 1])
+            {
+                return 1;
+            }
+            else if (Board[0, 2] == Board[1, 2] && Board[1, 2] == Board[2, 2])
+            {
+                return 1;
+            }
+            else if (Board[0, 0] == Board[1, 1] && Board[1, 1] == Board[2, 2])
+            {
+                return 1;
+            }
+            else if (Board[0, 2] == Board[1, 1] && Board[1, 0] == Board[2, 0])
+            {
+                return 1;
+            }
+            else if (Board[0, 0] != '1' && Board[0, 1] != '2' && Board[0, 2] != '3' && 
+                     Board[1, 0] != '4' && Board[1, 1] != '5' && Board[1, 2] != '6' && 
+                     Board[2, 0] != '7' && Board[2, 1] != '8' && Board[2, 2] != '9')
+            {
+                return -1;
             }
             else
             {
-                Bowl = -1;  // Else we assign a default value
+                return 0;
             }
         }
     }
