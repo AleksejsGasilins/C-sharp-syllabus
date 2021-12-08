@@ -9,12 +9,14 @@ namespace Exercise4
         {
             char[] vowels = {'a', 'e', 'i', 'o', 'u'};
 
+            Console.WriteLine("Output with for: ");
+
             for (int i = 0; i < vowels.Length; i++)
             {
                 Console.Write(vowels[i] + " ");
             }
 
-            Console.WriteLine();
+            Console.WriteLine("\nOutput with foreach: ");
 
             foreach (var count in vowels)
             {
