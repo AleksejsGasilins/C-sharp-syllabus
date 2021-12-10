@@ -10,9 +10,22 @@ namespace Exercise_5
             string firstWord = Console.ReadLine();
 
             Console.WriteLine("Enter second word: ");
-            string secondtWord = Console.ReadLine();
+            string secondWord = Console.ReadLine();
 
+            int fistLineLength = firstWord.Length;
+            int secondLineLength = secondWord.Length;
+            int allLineLength = 30;
 
+            int dotCount = 30 - (fistLineLength + secondLineLength);
+            string readyText = "";
+            string dot = ".";
+
+            for (int i = 0; i < dotCount; i++)
+            {
+                readyText += dot;
+            }
+
+            Console.WriteLine(firstWord + readyText + secondWord);
         }
     }
 }
