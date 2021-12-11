@@ -9,16 +9,36 @@ namespace Exercise_8
             DrawFunction(3);
         }
 
-        static void DrawFunction(int size)
+        static void DrawFunction(int height)
         {
-            for (int i = 0; i < size; i++)
+            string star = "****";
+
+            for (int i = 0; i < height - 1; i++)
             {
-                string star = string.Empty; // use string
-                for (int counter = 0; counter < 10; counter++)
+                for (int k = height; k > i; k--)
                 {
-                    star += "*"; // append a star
-                    Console.WriteLine(star);
+                    Console.Write("////");
                 }
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(star);
+                }
+                for (int s = 1; s <= i; s++)
+                {
+                    Console.Write(star);
+                }
+                for (int v = height; v > i - 2; v--)
+                {
+                    Console.Write("\\\\");
+                }
+                if (i == height - 1)
+                {
+                    for (int m = 1; m < height; m++)
+                    {
+                        Console.Write(star);
+                    }
+                }
+                Console.WriteLine();
             }
         }
     }
