@@ -6,7 +6,9 @@ namespace Exercise_8
     {
         static void Main(string[] args)
         {
+            DrawFunction(5);
             DrawFunction(3);
+            DrawFunction(7);
         }
 
         static void DrawFunction(int height)
@@ -15,7 +17,7 @@ namespace Exercise_8
 
             for (int i = 0; i < height - 1; i++)
             {
-                for (int k = height; k > i; k--)
+                for (int k = height - 4; k > i - 3; k--)
                 {
                     Console.Write("////");
                 }
@@ -27,19 +29,22 @@ namespace Exercise_8
                 {
                     Console.Write(star);
                 }
-                for (int v = height; v > i - 2; v--)
+                for (int v = height - 4; v > i - 3; v--)
                 {
-                    Console.Write("\\\\");
-                }
-                if (i == height - 1)
-                {
-                    for (int m = 1; m < height; m++)
-                    {
-                        Console.Write(star);
-                    }
+                    Console.Write("\\\\\\\\");
                 }
                 Console.WriteLine();
             }
+
+            string emptyString = "";
+
+            for (int m = 1; m < height; m++)
+            {
+                emptyString +=  star + star;
+            }
+
+            Console.Write(emptyString);
+            Console.WriteLine();
         }
     }
 }
