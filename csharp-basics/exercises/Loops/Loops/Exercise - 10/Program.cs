@@ -14,17 +14,26 @@ namespace Exercise___10
 
             Console.WriteLine();
 
-            int minNumToInt = Сheck(userMinNum);
-            int maxBumToInt = Сheck(userMaxNum);
+            int minNumToInt = СheckOnNumber(userMinNum);
+            int maxBumToInt = СheckOnNumber(userMaxNum);
             string count = " ";
 
-            for (int i = minNumToInt; i != maxBumToInt + 1; i++)
+            for (int i = minNumToInt; i < maxBumToInt + 1; i++)
             {
-                Console.Write(i);
+                for (int j = i; j < maxBumToInt + 1; j++)
+                {
+                    Console.Write(j + " ");
+                }
+
+                for (int k = 1; k < i; k++)
+                {
+                    Console.Write(k + " ");
+                }
+                Console.WriteLine();
             }
         }
 
-        public static int Сheck(ConsoleKeyInfo UserInput)
+        public static int СheckOnNumber(ConsoleKeyInfo UserInput)
         {
             int Bowl;
 
