@@ -4,6 +4,11 @@ namespace Exercise_1
 {
     class Product
     {
+        public void PrintProduct(string[] args)
+        {
+
+        }
+
         public Product(string name, double priceAtStart, int amountAtStart)
         {
             PrintProduct("Logitech mouse", 70.00, 14);
