@@ -2,21 +2,29 @@
 
 namespace Exercise_1
 {
-    class Product
+    class Program
     {
-        public void PrintProduct(string[] args)
+        static void Main(string[] args)
         {
+            var logitech = new Product("Logitech mouse", 70.00d, 14);
+            var iphone = new Product("Phone 5s", 999.99d, 3);
+            var epson = new Product("Epson EB-U05", 440.46d, 1);
 
-        }
+            logitech.PrintProduct();
+            epson.PrintProduct();
+            iphone.PrintProduct();
 
-        public Product(string name, double priceAtStart, int amountAtStart)
-        {
-            PrintProduct("Logitech mouse", 70.00, 14);
-        }
+            logitech.ChangePrice(115d);
+            epson.ChangeQuantity(13);
+            iphone.ChangeName("iPhone-11");
 
-        public void PrintProduct(string name, double priceAtStart, int amountAtStart)
-        {
-            Console.Write($"{name}, price {priceAtStart} EUR, amount {amountAtStart} units");
+            Console.WriteLine();
+
+            logitech.PrintProduct();
+            epson.PrintProduct();
+            iphone.PrintProduct();
+
+            Console.ReadKey();
         }
     }
 }
