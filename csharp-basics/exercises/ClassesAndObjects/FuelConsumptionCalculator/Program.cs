@@ -10,25 +10,31 @@ namespace FuelConsumptionCalculator
     {
         private static void Main(string[] args)
         {
-            int startKilometers;
-            int liters;
+            double startKilometers;
+            double endKilometers;
+            double liters;
             
             Console.WriteLine();
 
-            Car car = new Car(0);
-            Car car1 = new Car(0);
-            for (int i = 0; i < 3; i++)
+            Car car = new Car(0, 0, 0);
+            Car car1 = new Car(0, 0, 0);
+
+            for (int i = 0; i < 1; i++)
             {
                 Console.Write("Enter first reading: ");
-                startKilometers = Convert.ToInt32(Console.ReadLine());    
+                startKilometers = Convert.ToDouble(Console.ReadLine());    
                 Console.Write("Enter liters reading: ");
-                liters = Convert.ToInt32(Console.ReadLine());
+                liters = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter end reading: ");
+                endKilometers = Convert.ToDouble(Console.ReadLine());
                 car.FillUp(startKilometers, liters);
                 
                 Console.Write("Enter first reading: ");
-                startKilometers = Convert.ToInt32(Console.ReadLine());    
+                startKilometers = Convert.ToDouble(Console.ReadLine());    
                 Console.Write("Enter liters reading: ");
-                liters = Convert.ToInt32(Console.ReadLine());
+                liters = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter end reading: ");
+                endKilometers = Convert.ToDouble(Console.ReadLine());
                 car1.FillUp(startKilometers, liters);
             }
 
