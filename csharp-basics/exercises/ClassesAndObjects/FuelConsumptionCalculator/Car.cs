@@ -5,6 +5,7 @@
         private double _startKilometers;
         private double _endKilometers;
         private double _liters;
+
         public Car(double startOdo, double endingOdo, double liters)
         {
             _startKilometers = startOdo;
@@ -14,7 +15,7 @@
 
         public double CalculateConsumption()
         {
-            return _endKilometers - _startKilometers / _liters;
+            return (_endKilometers - _startKilometers) / _liters;
         }
 
         private double ConsumptionPer100Km()
