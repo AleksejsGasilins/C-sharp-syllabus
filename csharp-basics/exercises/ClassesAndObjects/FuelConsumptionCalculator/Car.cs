@@ -3,34 +3,27 @@
     public class Car
     {
         private double _startKilometers;
-        private double _endKilometers;
-        private double _liters;
+        private double _endKilometers = 0;
+        private double _liters = 0;
 
-        public Car(double startOdo, double endingOdo, double liters)
+        public Car(double startOdo)
         {
             _startKilometers = startOdo;
-            _endKilometers = endingOdo;
-            _liters = liters;
         }
 
         public double CalculateConsumption()
         {
-            return (_endKilometers - _startKilometers) / _liters;
-        }
-
-        private double ConsumptionPer100Km()
-        {
-            return (_endKilometers - _startKilometers / _liters) * 100;
+            return ((_endKilometers - _startKilometers) / _liters) * 100;
         }
 
         public bool GasHog()
         {
-            return ConsumptionPer100Km() > 15;
+            return CalculateConsumption() > 15;
         }
 
         public bool EconomyCar()
         {
-            return ConsumptionPer100Km() < 5;
+            return CalculateConsumption() < 5;
         }
 
         public void FillUp(double mileage, double liters)
