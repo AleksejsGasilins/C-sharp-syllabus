@@ -10,6 +10,11 @@ namespace BankAccount
     {
         static void Main(string[] args)
         {
+            var bankAccount = new BankAccount("Benson", -17.25f);
+
+            bankAccount.GetAccountData();
+
+            Console.ReadKey();
         }
     }
 }
