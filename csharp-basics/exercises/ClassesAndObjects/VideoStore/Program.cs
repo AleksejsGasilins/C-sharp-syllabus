@@ -12,6 +12,8 @@ namespace VideoStore
         private static VideoStore _videoStore = new VideoStore();
         private static void Main(string[] args)
         {
+            var testVideo = new VideoStoreTest(_videoStore);
+
             while (true)
             {
                 Console.WriteLine("Choose the operation you want to perform ");
@@ -47,7 +49,7 @@ namespace VideoStore
 
         private static void ListInventory()
         {
-            _videoStore.ListInventory();
+           DrawInformation.DrawAllVideo(_videoStore);
         }
 
         private static void FillVideoStore()
@@ -60,23 +62,24 @@ namespace VideoStore
                 Console.WriteLine("Enter rating");
                 int rating = Convert.ToInt16(Console.ReadLine());
 
-                _videoStore.AddVideo(movieName);
-                _videoStore.TakeUsersRating(rating, movieName);
+                _videoStore.AddVideo(new Video(movieName, rating));
             }
+
+            DrawInformation.DrawAllVideo(_videoStore);
         }
 
         private static void RentVideo()
         {
-            Console.WriteLine("Enter movie name");
-            string movieName = Console.ReadLine();
-            _videoStore.Checkout(movieName);
+            Console.WriteLine("Enter index of video to rent");
+            int indexMovie = Convert.ToInt32(Console.ReadLine());
+            _videoStore.checkOut(indexMovie);
         }
 
         private static void ReturnVideo()
         {
-            Console.WriteLine("Enter movie name");
-            string movieName = Console.ReadLine();
-            _videoStore.ReturnVideo(movieName);
+            Console.WriteLine("Enter index of video to return");
+            int indexMovie = Convert.ToInt32(Console.ReadLine());
+            _videoStore.ReturnVideo(indexMovie);
         }
     }
 }

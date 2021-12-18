@@ -1,44 +1,56 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace VideoStore
 {
     class Video
     {
-        public Video(string title)
+        private string _title;
+        private List<float> _rating = new List<float>();
+        private bool _flag = false;
+
+        public Video(string title, float startRating)
         {
-            
+            _title = title;
+            SetRating(startRating);
         }
 
-        public void BeingCheckedOut()
+        public void SetRating(float rating)
         {
-            
+            _rating.Add(rating);
         }
 
-        public void BeingReturned()
+        public void SetFlag(bool flag)
         {
-            
+            _flag = flag;
         }
 
-        public void ReceivingRating(double rating)
+        public string getTitle()
         {
-            
+            return _title;
         }
 
-        public double AverageRating()
+        public string getRating()
         {
-            return 0;
+            return string.Format("{0:0.00}", (_rating.Sum(x => (x)) / _rating.Count));
         }
 
-        public bool Available()
+        public bool getFlag()
         {
-            return true;
+            return _flag;
         }
 
-        public string Title => "";
-
-        public override string ToString()
+        public string VidoChecked()
         {
-            return $"{Title} {AverageRating()} {Available()}";
+            if (getFlag())
+            {
+                return "Checked out";
+            }
+            else
+            {
+                return "On the shelves";
+            }
         }
     }
 }
