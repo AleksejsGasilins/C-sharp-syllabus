@@ -9,7 +9,7 @@ namespace Exercise_7
     class Dog
     {
         private string _name { get; set; }
-        private string _sex  { get; set; }
+        private string _sex { get; set; }
         private string _father { get; set; }
         private string _mother { get; set; }
 
@@ -34,7 +34,7 @@ namespace Exercise_7
 
         public bool hasSameMotherAs(Dog otherDog)
         {
-            if (_mother == _mother)
+            if (_mother == otherDog._mother)
             {
                 return true;
             }
@@ -43,11 +43,5 @@ namespace Exercise_7
                 return false;
             }
         }
-
-
-        //public override string ToString()
-        //{
-        //    return $"{_name} has {_mother} as mother, and {_father} as father.";
-        //}
     }
 }

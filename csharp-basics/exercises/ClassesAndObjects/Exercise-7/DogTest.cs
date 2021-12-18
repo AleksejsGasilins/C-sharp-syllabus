@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,35 +9,79 @@ namespace Exercise_7
 {
     class DogTest
     {
+        public Dog[] dogs { get; protected set; }
+
         public DogTest()
         {
-            var dog1 = new Dog("Max", "male", "Lady", "Rocky");
-            var dog2 = new Dog("Rocky", "male", "Molly", "Sam");
-            var dog3 = new Dog("Sparky", "male");
-            var dog4 = new Dog("Buster", "male", "Lady", "Sparky");
-            var dog5 = new Dog("Sam", "male");
-            var dog6 = new Dog("Lady", "female");
-            var dog7 = new Dog("Molly", "female");
-            var dog8 = new Dog("Coco", "female", "Molly", "Buster");
-
-            var dogs = new List<Dog>
+            dogs = new Dog[]
             {
-                dog1, dog2, dog3,
-                dog4, dog5, dog6,
-                dog7, dog8
+                new Dog("Max", "male", "Lady", "Rocky"),
+                new Dog("Rocky", "male", "Molly", "Sam"),
+                new Dog("Sparky", "male"),
+                new Dog("Buster", "male", "Lady", "Sparky"),
+                new Dog("Sam", "male"),
+                new Dog("Lady", "female"),
+                new Dog("Molly", "female"),
+                new Dog("Coco", "female", "Molly", "Buster")
             };
         }
 
-        public static Dog[] getDogByName(Dog[] dogs)
+        public Dog GetDogByName(string name)
         {
             foreach (var dog in dogs)
             {
-                if (dog.GetName() == )
+                var dogName = dog.GetName();
+
+                if (dogName == name)
                 {
-                    
+                    return dog;
                 }
+            }
+
+            return null;
+        }
+
+        public string getFathersNameByDogName(string name)
+        {
+            var father = GetDogByName(name);
+            if (father != null)
+            {
+                return father.fathersName();
+            }
+            else
+            {
+                return "No dog with that name";
             }
         }
 
+        public void tests()
+        {
+            Console.WriteLine(getFathersNameByDogName("Coco"));
+            Console.WriteLine(getFathersNameByDogName("Sparky"));
+
+            if (GetDogByName("Coco").hasSameMotherAs(GetDogByName("Rocky")))
+            {
+                Console.WriteLine("true");
+            }
+            else
+            {
+                Console.WriteLine("false");
+            }
+        }
+
+        public void tests2()
+        {
+            Console.WriteLine(getFathersNameByDogName("Max"));
+            Console.WriteLine(getFathersNameByDogName("Rocky"));
+
+            if (GetDogByName("Sparky").hasSameMotherAs(GetDogByName("Buster")))
+            {
+                Console.WriteLine("true");
+            }
+            else
+            {
+                Console.WriteLine("false");
+            }
+        }
     }
 }

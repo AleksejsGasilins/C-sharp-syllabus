@@ -19,6 +19,7 @@ namespace Exercise_4
             };
 
             var filtered = GetPg(movies.ToArray());
+
             foreach (var movie in filtered)
             {
                 Console.WriteLine($"{movie}");

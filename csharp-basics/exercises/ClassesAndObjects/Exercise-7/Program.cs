@@ -7,7 +7,10 @@ namespace Exercise_7
     {
         static void Main(string[] args)
         {
+            var dogTest = new DogTest();
 
+            dogTest.tests();
+            dogTest.tests2();
         }
 
 
