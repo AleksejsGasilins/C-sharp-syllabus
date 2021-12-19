@@ -3,37 +3,51 @@
     class Account
     {
         private string _name;
-        private double _money;
-
-        public Account(string v1, double v2)
+        private double _balance;
+        private int _id;
+        public Account(int id, string name, double balance)
         {
-            
+            _id = id;
+            _balance = balance;
+            _name = name;
         }
 
-        public double Withdrawal(double i)
+        public int GetId()
         {
-            return i;
+            return _id;
         }
 
-        public void Deposit(double i)
+        public string GetName()
         {
-            
+            return _name;
         }
 
-        public double Balance()
+        public double GetBalance()
         {
-            return _money;
+            return _balance;
         }
 
-        public override string ToString()
+        public bool CheckBalance(double amount)
         {
-            return $"{_name}: {_money}";
+            if (_balance - amount >= 0)
+            {
+                return true;
+            }
+
+            return false;
         }
 
-        public string Name
+        public void Withdrawal(double amount)
         {
-            get => _name;
-            set => _name = value;
+            if (CheckBalance(amount))
+            {
+                _balance -= amount;
+            }
+        }
+
+        public void Deposit(double amount)
+        {
+            _balance += amount;
         }
     }
 }
