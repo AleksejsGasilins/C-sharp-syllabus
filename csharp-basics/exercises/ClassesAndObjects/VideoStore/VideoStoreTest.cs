@@ -23,7 +23,7 @@ namespace VideoStore
             _videoStore.AddVideo(new Video("Star Wars Episode IV: A New Hope", 10));
 
             DrawInformation.DrawAllVideo(_videoStore);
-            _videoStore.checkOut(0);
+            _videoStore.CheckOut(0);
             DrawInformation.DrawAllVideo(_videoStore);
             _videoStore.ReturnVideo(0);
             DrawInformation.DrawAllVideo(_videoStore);

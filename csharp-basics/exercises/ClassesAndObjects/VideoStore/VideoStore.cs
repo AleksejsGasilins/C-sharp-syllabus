@@ -34,15 +34,15 @@ namespace VideoStore
             return null;
         }
 
-        public void checkOut(int index)
+        public void CheckOut(int index)
         {
             var video = GetVideoByIndex(index);
-            if (video != null && !video.getFlag())
+            if (video != null && !video.GetFlag())
             {
                 video.SetFlag(true);
                 Console.WriteLine("Great choice");
             }
-            else if (video != null && video.getFlag())
+            else if (video != null && video.GetFlag())
             {
                 Console.WriteLine("Sorry, video is checked out");
             }
@@ -56,12 +56,12 @@ namespace VideoStore
         {
             var video = GetVideoByIndex(index);
 
-            if (video != null && video.getFlag())
+            if (video != null && video.GetFlag())
             {
                 video.SetFlag(false);
-                setRating(video);
+                SetRating(video);
             }
-            else if (video != null && !video.getFlag())
+            else if (video != null && !video.GetFlag())
             {
                 Console.WriteLine($"You don't have the video with {index} id");
             }
@@ -71,7 +71,7 @@ namespace VideoStore
             }
         }
 
-        private bool setRating(Video video)
+        private bool SetRating(Video video)
         {
             while (true)
             {

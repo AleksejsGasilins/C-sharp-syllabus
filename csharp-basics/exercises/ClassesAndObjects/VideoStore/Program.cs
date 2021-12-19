@@ -72,7 +72,7 @@ namespace VideoStore
         {
             Console.WriteLine("Enter index of video to rent");
             int indexMovie = Convert.ToInt32(Console.ReadLine());
-            _videoStore.checkOut(indexMovie);
+            _videoStore.CheckOut(indexMovie);
         }
 
         private static void ReturnVideo()

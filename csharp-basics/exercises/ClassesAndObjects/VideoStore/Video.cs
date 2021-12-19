@@ -26,24 +26,24 @@ namespace VideoStore
             _flag = flag;
         }
 
-        public string getTitle()
+        public string GetTitle()
         {
             return _title;
         }
 
-        public string getRating()
+        public string GetRating()
         {
             return string.Format("{0:0.00}", (_rating.Sum(x => (x)) / _rating.Count));
         }
 
-        public bool getFlag()
+        public bool GetFlag()
         {
             return _flag;
         }
 
         public string VidoChecked()
         {
-            if (getFlag())
+            if (GetFlag())
             {
                 return "Checked out";
             }

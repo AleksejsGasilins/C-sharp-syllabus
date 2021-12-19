@@ -11,11 +11,10 @@ namespace VideoStore
         public static void DrawAllVideo(VideoStore videoStore)
         {
             var videos = videoStore.GetAll();
-            //videos.ForEach(item => Console.Write(item));
 
             for (int i = 0; i < videos.Count; i++)
             {
-                Console.WriteLine($"{i} {videos[i].getTitle()}|{videos[i].getRating()}|{videos[i].VidoChecked()}.");
+                Console.WriteLine($"{i} {videos[i].GetTitle()} |{videos[i].GetRating()}| {videos[i].VidoChecked()}.");
             }
         }
 
@@ -25,9 +24,9 @@ namespace VideoStore
 
             for (int i = 0; i < videos.Count; i++)
             {
-                if (!videos[i].getFlag())
+                if (!videos[i].GetFlag())
                 {
-                    Console.WriteLine($"{i} {videos[i].getTitle()}|{videos[i].getRating()}|{videos[i].VidoChecked()}.");
+                    Console.WriteLine($"{i} {videos[i].GetTitle()} |{videos[i].GetRating()}| {videos[i].VidoChecked()}.");
                 }
             }
         }
@@ -38,9 +37,9 @@ namespace VideoStore
 
             for (int i = 0; i < videos.Count; i++)
             {
-                if (videos[i].getFlag())
+                if (videos[i].GetFlag())
                 {
-                    Console.WriteLine($"{i} {videos[i].getTitle()}|{videos[i].getRating()}|{videos[i].VidoChecked()}.");
+                    Console.WriteLine($"{i} {videos[i].GetTitle()} |{videos[i].GetRating()}| {videos[i].VidoChecked()}.");
                 }
             }
         }
