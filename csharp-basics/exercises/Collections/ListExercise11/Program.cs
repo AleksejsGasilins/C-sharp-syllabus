@@ -10,19 +10,54 @@ namespace ListExercise11
     {
         static void Main(string[] args)
         {
-            //TODO: Create an List with string elements
+            string[] words =
+            {
+                "One", "Tow", "Three", "Four",
+                "five", "six", "seven", "eight",
+                "nine", "ten"
+            };
 
-            //TODO: Add 10 values to list
+            List<string> newWords = new List<string>();
 
-            //TODO: Add new value at 5th position
+            for (int i = 0; i < words.Length; i++)
+            {
+                newWords.Add(words[i]);
+            }
 
-            //TODO: Change value at last position (Calculate last position programmatically)
+            Console.WriteLine(string.Join(",",newWords));
 
-            //TODO: Sort your list in alphabetical order
+            newWords.Insert(4, "new 5th");
 
-            //TODO: Check if your list contains "Foobar" element
+            Console.WriteLine(string.Join(",", newWords));
 
-            //TODO: Print each element of list using loop
+            newWords[newWords.Count - 1] = "last";
+
+            Console.WriteLine(string.Join(",", newWords));
+
+            newWords.Sort();
+
+            Console.WriteLine(string.Join(",", newWords));
+
+            foreach (var word in newWords)
+            {
+                if (word == "Foobar")
+                {
+                    Console.WriteLine("True");
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            foreach (var newWord in newWords)
+            {
+                Console.WriteLine(newWord);
+            }
+
+            Console.WriteLine(string.Join(",", newWords));
+
+            Console.ReadKey();
         }
     }
 }
