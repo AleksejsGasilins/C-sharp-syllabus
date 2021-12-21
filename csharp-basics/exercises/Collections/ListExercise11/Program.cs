@@ -38,24 +38,41 @@ namespace ListExercise11
 
             Console.WriteLine(string.Join(",", newWords));
 
-            foreach (var word in newWords)
+            int check = 0;
+
+            for (int i = 0; i < newWords.Count; i++)
             {
-                if (word == "Foobar")
+                if (newWords[i] == "Foobar")
                 {
-                    Console.WriteLine("True");
+                    check = 1;
                 }
                 else
                 {
+                    check = 2;
                     break;
                 }
             }
 
-            foreach (var newWord in newWords)
+            if (check == 1)
             {
-                Console.WriteLine(newWord);
+                Console.WriteLine("True");
+            }
+            else
+            {
+                Console.WriteLine("False");
             }
 
-            Console.WriteLine(string.Join(",", newWords));
+            for (int i = 0; i < newWords.Count; i++)
+            {
+                if (i == newWords.Count - 1)
+                {
+                    Console.Write($"{newWords[i]}.");
+                }
+                else
+                {
+                    Console.Write($"{newWords[i]}, ");
+                }
+            }
 
             Console.ReadKey();
         }
