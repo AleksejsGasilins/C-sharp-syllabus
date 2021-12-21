@@ -8,25 +8,61 @@ namespace Exercise1
 {
     class Program
     {
-        /**
-           * Origination:
-           * Audi -> Germany
-           * BMW -> Germany
-           * Honda -> Japan
-           * Mercedes -> Germany
-           * VolksWagen -> Germany
-           * Tesla -> USA
-           */
-
         private static void Main(string[] args)
         {
-            string[] array = { "Audi", "BMW", "Honda", "Mercedes", "VolksWagen", "Mercedes", "Tesla" };
+            List<string> carList = new List<string>();
+            carList.Add("Audi");
+            carList.Add("BMW");
+            carList.Add("Honda");
+            carList.Add("Mercedes");
+            carList.Add("VolksWagen");
+            carList.Add("Mercedes");
+            carList.Add("Tesla");
 
-            //todo - replace array with an List and print out the results
+            foreach (var car in carList)
+            {
+                Console.WriteLine(car);
+            }
 
-            //todo - replace array with a HashSet and print out the results
+            Console.WriteLine();
 
-            //todo - replace array with a Dictionary (use brand as key and origination as value) and print out the results
+            HashSet<string> carHashSet = new HashSet<string>();
+
+            for (int i = 0; i < carList.Count; i++)
+            {
+                carHashSet.Add(carList[i]);
+            }
+
+            foreach (var car in carHashSet)
+            {
+                Console.WriteLine(car);
+            }
+
+            Console.WriteLine();
+
+            Dictionary<string, string> carDictionary = new Dictionary<string, string>();
+            carDictionary.Add("Audi", "Germany");
+            carDictionary.Add("BMW", "Germany");
+            carDictionary.Add("Honda", "Japan");
+            carDictionary.Add("Mercedes", "Germany");
+            carDictionary.Add("VolksWagen", "Germany");
+            carDictionary.Add("Tesla", "USA");
+
+            Dictionary<string, string>.KeyCollection keys = carDictionary.Keys;
+            foreach (var car in keys)
+            {
+                Console.WriteLine(car);
+            }
+
+            Console.WriteLine();
+
+            Dictionary<string, string>.ValueCollection value = carDictionary.Values;
+            foreach (var key in value)
+            {
+                Console.WriteLine(key);
+            }
+
+            Console.ReadKey();
         }
     }
 }
