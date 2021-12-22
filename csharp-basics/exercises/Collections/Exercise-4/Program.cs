@@ -7,38 +7,69 @@ namespace Exercise_4
     {
         static void Main(string[] args)
         {
-            List<int[]> userNums = new List<int[]>();
-            List<int> userNums2 = new List<int>();
+            List<char> userChars = new List<char>();
+            List<int> userNums = new List<int>();
 
             Console.WriteLine("Enter your number: ");
-            string userInput = Console.ReadLine();
-            userNums.Add(GetIntArray(Convert.ToInt32(userInput)));
-            int sum = 0;
+            int userInput = Convert.ToInt32(Console.ReadLine());
 
-            for (int i = 0; i < userNums.Count; i++)
+            foreach (var _Char in UserIntToChar(userInput))
             {
-                userNums2.Add(userNums[i] * Convert.ToInt32(Math.Pow(10, userNums.Count - i - 1)));
+                userChars.Add(_Char);
             }
 
+            List<double> charInInt = new List<double>();
 
-            for (int i = 0; i < userNums.Count; i++)
+            do
             {
-                sum += userNums[] ^ 2;
+                int sum = 0;
+
+                for (int i = 0; i < userChars.Count; i++)
+                {
+
+                    charInInt.Add(Convert.ToDouble(userChars[i] - '0'));
+
+                    sum += Convert.ToInt32(Math.Pow(charInInt[i], 2));
+
+                    if (i == userChars.Count - 1)
+                    {
+                        userNums.Add(sum);
+                    }
+                }
+
+                userChars.Clear();
+                charInInt.Clear();
+
+                var zz = UserIntToChar(sum); 
+                AddNewChar(zz, userChars);
+
+                userNums.Clear();
+
+            } while (userChars.Count != 1);
+
+            if (userChars.Contains('1'))
+            {
+                Console.Write("Heppy");
+            }
+            else
+            {
+                Console.Write("Not heppy");
             }
 
-            Console.WriteLine(sum);
         }
 
-        public static int[] GetIntArray(int num)
+        public static char[] UserIntToChar(int userInt)
         {
-            List<int> listOfInts = new List<int>();
-            while (num > 0)
+            char[] _Chars = (userInt.ToString().ToCharArray());
+            return _Chars;
+        }
+
+        public static void AddNewChar(char[] resultChars, List<char> userChars)
+        {
+            foreach (var _Char in resultChars)
             {
-                listOfInts.Add(num % 10);
-                num = num / 10;
+               userChars.Add(_Char);
             }
-            listOfInts.Reverse();
-            return listOfInts.ToArray();
         }
     }
 }
