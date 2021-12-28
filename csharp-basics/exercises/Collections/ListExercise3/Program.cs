@@ -10,7 +10,8 @@ namespace ListExercise3
     {
         static void Main(string[] args)
         {
-            //TODO: Write a C# program to insert an element into the array list at the first position.
+            string color1 = "Pink";
+            string color2 = "Yellow";
 
             var colors = new List<string>();
             colors.Add("Red");
@@ -21,10 +22,12 @@ namespace ListExercise3
 
             Console.WriteLine(string.Join(",", colors));
 
-            //TODO: Add new color at the first and third position of the list
+            colors.Insert(0, color1);
+            colors.Insert(2, color2);
 
-            //Print the list
             Console.WriteLine(string.Join(",", colors));
+
+            Console.ReadKey();
         }
     }
 }

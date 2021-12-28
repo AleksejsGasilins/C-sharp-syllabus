@@ -1,39 +1,40 @@
 using System;
+using System.Collections.Generic;
 
 namespace PhoneBook
 {
     public class PhoneDirectory
     {
-        private PhoneEntry[] _data;
-        private int _dataCount;
+        public SortedDictionary<string, string> _data;
 
-        public PhoneDirectory() {
-            _data = new PhoneEntry[1];
-            _dataCount = 0;
+        public PhoneDirectory(string name, string number)
+        {
+            _data = new SortedDictionary<string, string>();
+            _data.Add(name, number);
         }
 
-        private int Find(string name) {
-            for (var i = 0; i < _dataCount; i++) 
+        public string Find(string name)
+        {
+            string value = "";
+
+            if (_data.TryGetValue(name, out value))
             {
-                if (_data[i].name.Equals(name)) 
-                {
-                    return i;
-                }
+                return value;
             }
 
-            return -1;
+            return null;
         }
 
         public string GetNumber(string name) 
         {
-            var position = Find(name);
-            if (position == -1) 
+            var number = Find(name);
+            if (number == null) 
             {
                 return null;
             } 
             else 
             {
-                return _data[position].number;
+                return number;
             }
         }
 
@@ -44,21 +45,14 @@ namespace PhoneBook
                 throw new Exception("name and number cannot be null");
             }
 
-            var i = Find(name);
-            if (i >= 0) 
+            var phoneNum = Find(name);
+            if (phoneNum != null) 
             {
-                _data[i].number = number;
+                _data[name] = number;
             }
             else 
             {
-                if (_dataCount == _data.Length) 
-                {
-                    Array.Resize(ref _data, (2 * _data.Length));
-                }
-
-                var newEntry = new PhoneEntry {name = name, number = number}; // Create a new pair.
-                _data[_dataCount] = newEntry;   // Add the new pair to the array.
-                _dataCount++;
+                _data.Add(name, number);
             }
         }
     }
