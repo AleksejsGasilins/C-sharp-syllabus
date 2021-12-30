@@ -2,18 +2,18 @@ using System;
 
 namespace DragRace
 {
-    public class Tesla
+    public class Lexus : ICar
     {
         private int currentSpeed = 0;
 
         public void SpeedUp() 
         {
-            currentSpeed;
+            currentSpeed += 10;
         }
 
         public void SlowDown() 
         {
-            currentSpeed;
+            currentSpeed -= 10;
         }
 
         public string ShowCurrentSpeed() 
@@ -21,9 +21,14 @@ namespace DragRace
             return currentSpeed.ToString();
         }
 
+        public void UseNitrousOxideEngine() 
+        {
+            currentSpeed += 30;
+        }
+
         public void StartEngine() 
         {
-            Console.WriteLine("-- silence ---");
+            Console.WriteLine("Rrrrrrr.....");
         }
     }
 }
