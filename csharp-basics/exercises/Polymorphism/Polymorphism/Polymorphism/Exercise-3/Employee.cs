@@ -1,19 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Exercise_3
 {
-    class Employee : IDisplay
+    class Employee : Person
     {
-        protected string _jobTitle { get; set; }
+        private string _jobTitle;
 
-        public Employee(string jobTitle)
+        public Employee(string name, string lastName, string address, int id, string jobTitle)
+            : base(name, lastName, address, id)
         {
             _jobTitle = jobTitle;
         }
 
-        public void Display()
+        public string GetJobTitle
         {
-            Console.WriteLine(_jobTitle);
+            get { return _jobTitle; }
+            set { _jobTitle = value; }
+        }
+
+        public override void Display()
+        {
+            base.Display();
+            Console.WriteLine($" is a: {GetJobTitle}");
         }
     }
 }

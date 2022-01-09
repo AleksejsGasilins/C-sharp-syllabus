@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Exercise_3
 {
-    public class Person : IDisplay
+    class Person
     {
         private string _firstName;
         private string _lastName;
@@ -17,33 +21,33 @@ namespace Exercise_3
             _id = id;
         }
 
-        public string GetName()
+        public virtual string GetFirstName
         {
-            return _firstName;
+            get { return _firstName; }
+            set { _firstName = value; }
         }
 
-        public string GetLastName()
+        public virtual string GetLastName
         {
-            return _lastName;
+            get { return _lastName; }
+            set { _lastName = value; }
         }
 
-        public string GetAddress()
+        public virtual string GetAddress
         {
-            return _address;
+            get { return _address; }
+            set { _address = value; }
         }
 
-        public int GetId()
+        public virtual int GetId
         {
-            return _id;
+            get { return _id; }
+            set { _id = value; }
         }
 
-        public void Display()
+        public virtual void Display()
         {
-            Console.WriteLine(_firstName);
-            Console.WriteLine(_lastName);
-            Console.WriteLine(_address);
-            Console.WriteLine(_id);
+            Console.WriteLine($"Name: {GetFirstName}, LastName: {GetLastName}, address: {GetAddress}, id: {GetId}");
         }
-
     }
 }

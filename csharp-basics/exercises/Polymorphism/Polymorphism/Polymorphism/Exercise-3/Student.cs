@@ -1,19 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Exercise_3
 {
-    public class Student : Person
+    class Student : Person
     {
-        protected double _gpa { get; set; }
+        private double _gpa;
 
-        public Student(double gpa) : base()
+        public Student(string name, string lastName, string address, int id, double gpa)
+            : base(name, lastName, address, id)
         {
             _gpa = gpa;
         }
 
-        public void Display()
+        public double GetGpa
         {
-            Console.WriteLine(_gpa);
+            get { return _gpa; }
+            set { _gpa = value; }
+        }
+
+        public override void Display()
+        {
+            base.Display();
+            Console.WriteLine($" his GPA: {GetGpa}");
         }
     }
 }
