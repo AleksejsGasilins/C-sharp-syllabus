@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Firm
+﻿namespace Exercise_4
 {
     class Program
     {
@@ -13,3 +11,4 @@ namespace Firm
             personnel.Payday();
         }
     }
+}

@@ -25,20 +25,21 @@
         // Computes and returns the pay for this hourly employee.
         //-----------------------------------------------------------------
         public override double Pay()
+        {
 
         var payment = payRate * _hoursWorked;
         _hoursWorked = 0;
         return payment;
-    }
+        }
 
-    //-----------------------------------------------------------------
-    // Returns information about this hourly employee as a string.
-    //-----------------------------------------------------------------
-    public override string ToString()
-    {
-        var result = base.ToString();
-        result += "\nCurrent hours: " + _hoursWorked;
-        return result;
+        //-----------------------------------------------------------------
+        // Returns information about this hourly employee as a string.
+        //-----------------------------------------------------------------
+        public override string ToString()
+        {
+            var result = base.ToString();
+            result += "\nCurrent hours: " + _hoursWorked;
+            return result;
+        }
     }
-}
 }

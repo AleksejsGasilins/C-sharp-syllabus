@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Firm
+﻿namespace Exercise_4
 {
     public class Employee : StaffMember
     {
