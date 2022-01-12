@@ -1,4 +1,4 @@
-﻿namespace Firm
+﻿namespace Exercise_4
 {
     public class Volunteer : StaffMember
     {
