@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AdApp
 {
-    public class Campaign
+    public class Campaign : Advert
     {
         private List<Advert> campaign;
 
@@ -24,7 +25,9 @@ namespace AdApp
 
         public override string ToString()
         {
-            return "Advert Campaign" + campaign + "\nTotal Cost = " + GetCost();
+            var asd = GetCost();
+            var asas2 = campaign;
+            return "Advert Campaign" + (string.Join("", campaign)) + "\nTotal Cost = " + GetCost();
         }
     }
 }
