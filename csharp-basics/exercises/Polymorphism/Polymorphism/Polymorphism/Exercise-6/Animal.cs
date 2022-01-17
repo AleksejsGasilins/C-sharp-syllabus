@@ -9,7 +9,7 @@ namespace Exercise_6
         private double _animalWeight;
         private int _foodEaten;
 
-        public Animal(string animalType, string animalName, double animalWeight, int foodEaten = 0)
+        public Animal(string animalType, string animalName, double animalWeight, int foodEaten)
         {
             _animalType = animalType;
             _animalName = animalName;
@@ -17,14 +17,33 @@ namespace Exercise_6
             _foodEaten = foodEaten;
         }
 
-        public string GetAnumalType()
+        public virtual string GetAnumalType
         {
-            return _animalType;
+            get  { return _animalType; }
+            set { _animalType = value; }
         }
 
-        public virtual void MakeSound()
+        public virtual string GetAnimalName
         {
-            Console.WriteLine("Am-nam-nam-nam");
+            get { return _animalName; }
+            set { _animalName = value; }
+        }
+
+        public virtual double GetAnumalWeight
+        {
+            get { return _animalWeight; }
+            set { _animalWeight = value; }
+        }
+
+        public virtual int GetFoodEaten
+        {
+            get { return _foodEaten; }
+            set { _foodEaten = value; }
+        }
+
+        public virtual string MakeSound()
+        {
+           return "> Am-nam-nam-nam";
         }
 
         public virtual void Eat(Food food)

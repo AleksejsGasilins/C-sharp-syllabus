@@ -6,28 +6,14 @@ namespace Exercise_6
     {
         private int _quantity;
 
-        private string _foodEaten;
-
         public Food(int quantity)
         {
             _quantity = quantity;
         }
 
-        public string foodSelection(int userNum)
+        public virtual string GetFoodAndQuan()
         {
-            string eat = null;
-
-            switch (userNum)
-            {
-                case 1:
-                    eat = "Vegetable";
-                    break;
-                case 2:
-                    eat = "Meat";
-                    break;
-            }
-
-            return eat;
+           return $"{_quantity}";
         }
     }
 }

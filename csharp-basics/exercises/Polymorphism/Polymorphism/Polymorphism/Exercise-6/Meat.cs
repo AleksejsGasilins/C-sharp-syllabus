@@ -6,7 +6,7 @@ namespace Exercise_6
     {
         private string _meat;
 
-        public Meat(int quantity, string meat) : base(quantity)
+        public Meat(int quantity) : base(quantity)
         {
             _meat = "Meat";
         }
@@ -16,9 +16,9 @@ namespace Exercise_6
             return _meat;
         }
 
-        public void PrintMeat(Food quantity)
+        public override string GetFoodAndQuan()
         {
-            Console.WriteLine($"{_meat} {quantity}");
+           return $"{_meat} {base.GetFoodAndQuan()}";
         }
     }
 }

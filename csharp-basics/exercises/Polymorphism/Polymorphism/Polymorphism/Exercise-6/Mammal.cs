@@ -13,7 +13,7 @@ namespace Exercise_6
 
         public override string GetAllInfo()
         {
-           return $"{base.GetAllInfo()} {_livingRegion}";
+           return $"{base.GetAllInfo()},{_livingRegion}";
         }
     }
 }
