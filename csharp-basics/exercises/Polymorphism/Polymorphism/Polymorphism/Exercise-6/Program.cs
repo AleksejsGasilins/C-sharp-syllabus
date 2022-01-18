@@ -14,7 +14,6 @@ namespace Exercise_6
             animals.Add(new Tiger("Tiger", "Konan", 97.62, "Afrika"));
 
             List<string> allAnimals = new List<string>();
-            List<string> allAnimalsPrint = new List<string>();
 
             foreach (var animal in animals)
             {
