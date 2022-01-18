@@ -31,7 +31,7 @@ namespace Exercise_6
 
         public virtual double GetAnumalWeight
         {
-            get { return _animalWeight; }
+            get { return Math.Round(_animalWeight, 1); }
             set { _animalWeight = value; }
         }
 
@@ -52,7 +52,7 @@ namespace Exercise_6
             Console.WriteLine(_foodEaten);
         }
 
-        public virtual string GetAllInfo()
+        public virtual string GetAllInfo(int food)
         {
            return $"{_animalType} {_animalName} {_animalWeight}";
         }

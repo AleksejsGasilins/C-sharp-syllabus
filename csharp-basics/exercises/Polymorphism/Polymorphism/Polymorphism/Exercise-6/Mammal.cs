@@ -6,14 +6,47 @@ namespace Exercise_6
     {
         private string _livingRegion;
 
-        public Mammal(string animalType, string animalName, double animalWeight,string livingRegion, int foodEaten) : base(animalType, animalName, animalWeight, foodEaten)
+        private string _catBreed;
+
+        public Mammal(string animalType, string animalName, double animalWeight, string livingRegion, int foodEaten, string catBreed = null)
+            : base(animalType, animalName, animalWeight, foodEaten)
         {
             _livingRegion = livingRegion;
+            _catBreed = catBreed;
         }
 
-        public override string GetAllInfo()
+        public string GetCatBread
         {
-           return $"{base.GetAllInfo()},{_livingRegion}";
+            get { return _catBreed; }
+            set { _catBreed = value; }
+        }
+
+        public virtual bool AnimalEat(string userInput)
+        {
+            bool animalEat = false;
+
+            if (userInput == "Vegetable")
+            {
+                return true;
+            }
+            else if (userInput == "Meat")
+            {
+                return true;
+            }
+
+            return animalEat;
+        }
+
+        public override string GetAllInfo(int food = 0)
+        {
+            if(_catBreed == null)
+            {
+                return $"{GetAnumalType}[{GetAnimalName}, {GetAnumalWeight}, {_livingRegion}, {food}]";
+            }
+            else
+            {
+                return $"{GetAnumalType}[{GetAnimalName}, {_catBreed}, {GetAnumalWeight}, {_livingRegion}, {GetFoodEaten}]";
+            }
         }
     }
 }

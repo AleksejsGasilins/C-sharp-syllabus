@@ -19,8 +19,6 @@ namespace AdApp
 
         public override int Cost()
         {
-            var newFee = 0;
-
             if (_primeLocation == false)
             {
                 return base.Cost() + _numDays * _rate;

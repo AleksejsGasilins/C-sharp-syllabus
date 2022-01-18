@@ -2,16 +2,16 @@
 
 namespace Exercise_6
 {
-    class Mouse : Mammal
+    class Zebra : Mammal
     {
-        public Mouse(string animalType, string animalName, double animalWeight, string livingRegion, int foodEaten = 0)
+        public Zebra(string animalType, string animalName, double animalWeight, string livingRegion, int foodEaten = 0)
             : base(animalType, animalName, animalWeight, livingRegion, foodEaten)
         {
         }
 
         public override string MakeSound()
         {
-           return "> Squeak-squeak";
+            return "> Ihuk-ihuk";
         }
 
         public override bool AnimalEat(string userInput)

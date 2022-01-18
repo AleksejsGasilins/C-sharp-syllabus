@@ -7,25 +7,43 @@ namespace Exercise_6
     {
         static void Main(string[] args)
         {
-            var animal1 = new Mouse("Mouse", "Lora", 1.3, "farm");
+            List <Mammal> animals = new List<Mammal>();
+            animals.Add(new Mouse("Mouse", "Lora", 1.37, "farm"));
+            animals.Add(new Zebra("Zebra", "Fomror", 53.15, "Afrika"));
+            animals.Add(new Cat("Cat", "Gray", 1.10, "Home", "Persian"));
+            animals.Add(new Tiger("Tiger", "Konan", 97.62, "Afrika"));
 
-            Console.WriteLine(animal1.GetAllInfo());
-            Console.WriteLine(animal1.MakeSound());
+            List<string> allAnimals = new List<string>();
+            List<string> allAnimalsPrint = new List<string>();
 
-            Console.WriteLine("Choose the amount of food for the animal:");
-            var userFoodAmount = Convert.ToInt32(Console.ReadLine());
-
-            var userFood = new Felime(userFoodAmount);
-            var userFoodChoose = userFood.GetUserChoiceFood();
-
-            if(animal1.MouseEat(userFoodChoose) == true)
+            foreach (var animal in animals)
             {
-                Console.WriteLine(animal1.GetAllInfo());
+                Console.WriteLine(animal.GetAllInfo());
+                Console.WriteLine(animal.MakeSound());
+
+                Console.WriteLine("Choose the amount of food for the animal:");
+                var userFoodAmount = Convert.ToInt32(Console.ReadLine());
+
+                var userFood = new Felime(userFoodAmount);
+                var userFoodChoose = userFood.GetUserChoiceFood();
+
+                var animalInfo = animal.GetAllInfo(userFoodAmount);
+                var animalNotEat = animal.GetAnumalType;
+
+                if (animal.AnimalEat(userFoodChoose) == true)
+                {
+                    allAnimals.Add(animalInfo);
+                    Console.WriteLine($"\n> {animalInfo}");
+                }
+                else
+                {
+                    allAnimals.Add(animalInfo);
+                    Console.WriteLine($"\n> {animalNotEat} are not eating that type of food");
+                    Console.WriteLine("End");
+                }
             }
-            else
-            {
-                Console.WriteLine($"\n2");
-            }
+
+            Console.WriteLine(string.Join(",", allAnimals) + ".");
         }
     }
 }

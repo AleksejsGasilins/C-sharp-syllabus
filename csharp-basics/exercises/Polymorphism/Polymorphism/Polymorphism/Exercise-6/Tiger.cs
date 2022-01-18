@@ -2,27 +2,27 @@
 
 namespace Exercise_6
 {
-    class Mouse : Mammal
+    class Tiger : Mammal
     {
-        public Mouse(string animalType, string animalName, double animalWeight, string livingRegion, int foodEaten = 0)
+        public Tiger(string animalType, string animalName, double animalWeight, string livingRegion, int foodEaten = 0)
             : base(animalType, animalName, animalWeight, livingRegion, foodEaten)
         {
         }
 
         public override string MakeSound()
         {
-           return "> Squeak-squeak";
+            return "> Rrrrrr-rrrrr";
         }
 
         public override bool AnimalEat(string userInput)
         {
             if (userInput == "Vegetable")
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 

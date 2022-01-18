@@ -15,10 +15,5 @@ namespace Exercise_6
         {
             return _meat;
         }
-
-        public override string GetFoodAndQuan()
-        {
-           return $"{_meat} {base.GetFoodAndQuan()}";
-        }
     }
 }

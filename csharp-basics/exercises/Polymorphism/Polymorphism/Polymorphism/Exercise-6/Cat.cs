@@ -2,16 +2,16 @@
 
 namespace Exercise_6
 {
-    class Mouse : Mammal
+    class Cat : Mammal
     {
-        public Mouse(string animalType, string animalName, double animalWeight, string livingRegion, int foodEaten = 0)
-            : base(animalType, animalName, animalWeight, livingRegion, foodEaten)
+        public Cat(string animalType, string animalName, double animalWeight, string livingRegion, string catBreed, int foodEaten = 0)
+            : base(animalType, animalName, animalWeight, livingRegion, foodEaten, catBreed)
         {
         }
 
         public override string MakeSound()
         {
-           return "> Squeak-squeak";
+            return "> Meow - meow";
         }
 
         public override bool AnimalEat(string userInput)
@@ -22,7 +22,7 @@ namespace Exercise_6
             }
             else
             {
-                return false;
+                return true;
             }
         }
 
